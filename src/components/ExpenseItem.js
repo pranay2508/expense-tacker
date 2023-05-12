@@ -1,11 +1,11 @@
 import './ExpenseItem.css'
 
-function ExpenseItem(){
+function ExpenseItem(props){
 // the code looks like in html is basically speciall JSX code which is de eloper by react team
     //its still the js code 
-    const expenseDate= new Date(2023 , 5 , 13);
-    const expenseTitle = 'Car Insurance';
-    const expenseAmount = 294.67;
+    // const expenseDate= new Date(2023 , 5 , 13);
+    // const expenseTitle = 'Car Insurance';
+    // const expenseAmount = 294.67;
 
 
 
@@ -18,10 +18,10 @@ function ExpenseItem(){
     return (<div className="expense-item">
         <div>
         
-         {expenseDate.toISOString()}
+         {props.date.toISOString()}
          <div className='expense-item__description'>
-            <h2> {expenseTitle}</h2>
-            <div className='expense-item__price'>${expenseAmount}</div>
+            <h2> {props.title}</h2>
+            <div className='expense-item__price'>${props.amount}</div>
          </div>
         </div>
     </div>
