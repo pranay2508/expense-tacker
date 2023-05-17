@@ -10,7 +10,12 @@ function App() {
       amount: 94.12,
       date: new Date(2020, 7, 14),
     },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+    { id: "e2", 
+    title: "New TV", 
+    amount: 799.49, 
+    date: new Date(2021, 2, 12) 
+  },
+
     {
       id: "e3",
       title: "Car Insurance",
@@ -27,7 +32,7 @@ function App() {
   return (
     //to excess the array of objects 
     <div>
-      <h2>Let's get started! pranay bhatnagar jeee</h2>
+      <h2>Let's get started! pranay bhatnagar </h2>
 
       <ExpenseItem
         title={expenses[0].title}

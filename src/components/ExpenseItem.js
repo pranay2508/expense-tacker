@@ -1,3 +1,5 @@
+
+import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
 function ExpenseItem(props){
@@ -7,24 +9,25 @@ function ExpenseItem(props){
     // const expenseTitle = 'Car Insurance';
     // const expenseAmount = 294.67;
 
-
-
-
-
+    // tolocalestring is used to show the date in human read formate
+   
 
 
 //(method) Date.toISOString(): string ==>>  Returns a date as a string value in ISO format.
 
-    return (<div className="expense-item">
-        <div>
-        
-         {props.date.toISOString()}
+
+// very important --> we are exporting the data from ExpenseDate to ExpenseItem to APP.js 
+// that is rendering through props you can see we used Expenseitem in app.js and in Expenseitem we used ExpenseDate using props
+    return (
+
+        <div className="expense-item">
+        <ExpenseDate  date ={props.date}/>
          <div className='expense-item__description'>
             <h2> {props.title}</h2>
             <div className='expense-item__price'>${props.amount}</div>
          </div>
         </div>
-    </div>
+   
     );
 }
 
