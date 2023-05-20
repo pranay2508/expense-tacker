@@ -28,6 +28,12 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
+    // {
+    //   id: "e5",
+    //   title: "New book (Wooden)",
+    //   amount: 4503,
+    //   date: new Date(2021, 3, 10),
+    // },
   ];
   return (
     //to excess the array of objects 
