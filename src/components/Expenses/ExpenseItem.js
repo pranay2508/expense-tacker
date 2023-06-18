@@ -1,9 +1,24 @@
-
+import React, { useState } from 'react';
 import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
 function ExpenseItem(props){
+
+    //function clickHandler is used for the click on button from user
+    
+    
+   const [title,setTitle]= useState(props.title);
+     //usestate must be directly called inside such component function 
+    // the can not be called outside the function or inside a nested function 
+    
+   
+    
+    
+    const clickHandler = () => {
+       setTitle('Updated');
+        console.log(title);
+    }
 // the code looks like in html is basically speciall JSX code which is de eloper by react team
     //its still the js code 
     // const expenseDate= new Date(2023 , 5 , 13);
@@ -25,11 +40,11 @@ function ExpenseItem(props){
         
         <ExpenseDate  date ={props.date}/>
          <div className='expense-item__description'>
-            <h2> {props.title}</h2>
+            <h2> {title}</h2>
             <div className='expense-item__price'>${props.amount}</div>
          </div>
         
-        
+        <button onClick={clickHandler}>Change title</button>
         </Card>
    
     );
