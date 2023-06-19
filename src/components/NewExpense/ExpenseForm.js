@@ -3,20 +3,40 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  const [enteredTitled, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  //   const [enteredTitled, setEnteredTitle] = useState("");
+  //   const [enteredAmount, setEnteredAmount] = useState("");
+  //   const [enteredDate, setEnteredDate] = useState("");
 
+  // Imp =>> there are two ways to use or manage the stae by object method or by
+  // or by creating individual state for each function .
+
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    // setEnteredTitle(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredTitle: event.target.value,
+    });
   };
 
   const AmountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    // setEnteredAmount(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredAmount: event.target.value,
+    });
   };
 
   const DateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    // setEnteredDate(event.target.value);
+    setUserInput({
+      ...userInput,
+      enteredDate: event.target.value,
+    });
   };
 
   return (
