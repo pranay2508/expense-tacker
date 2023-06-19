@@ -1,4 +1,5 @@
-
+import React from 'react';
+import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from "./components/Expenses/Expenses";
 function App() {
   const expenses = [
@@ -38,7 +39,7 @@ function App() {
   return (
     //to excess the array of objects 
     <div>
-      <h2>Let's get started! pranay bhatnagar </h2>
+     <NewExpense/>
     <Expenses items={expenses}/>
      
     </div>

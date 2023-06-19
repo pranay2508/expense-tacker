@@ -9,6 +9,7 @@ function ExpenseItem(props){
     
     
    const [title,setTitle]= useState(props.title);
+   // useState(props.title); => this props.title value is coming form the props if we dont use props we have to us the value which has to be change 
      //usestate must be directly called inside such component function 
     // the can not be called outside the function or inside a nested function 
     
