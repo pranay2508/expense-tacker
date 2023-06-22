@@ -4,7 +4,7 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
   //below 3 lines are the states updates indivdually
-    const [enteredTitled, setEnteredTitle] = useState("");
+    const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
     const [enteredDate, setEnteredDate] = useState("");
 
@@ -51,12 +51,34 @@ const ExpenseForm = () => {
   //   });
    };
 
+   const submitHandler =(event) =>{
+    event.preventDefault();
+    //event.preventDefault is Javascript which just stop the page 
+    // to reload when clicked on submit button and stop the req sent to 
+    // server for reloading.
+
+    const expenseData ={
+      title : enteredTitle ,
+      amount:enteredAmount,
+      date: new Date(enteredDate)
+      // built in date constructor
+      //entereddate will parse the date and convert it into the date object
+    };
+    console.log(expenseData);
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
+   };
+
   return (
-    <form>
+    <form onSubmit ={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input 
+          type="text" 
+          value={enteredTitle}
+          onChange={titleChangeHandler} />
         </div>
 
         <div className="new-expense__control">
@@ -65,6 +87,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={AmountChangeHandler}
           />
         </div>
@@ -75,6 +98,7 @@ const ExpenseForm = () => {
             type="date"
             min="2023-01-01"
             max="2025=12-31"
+            value={enteredDate}
             onChange={DateChangeHandler}
           />
         </div>
