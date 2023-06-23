@@ -29,6 +29,8 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
+
+   
     // {
     //   id: "e5",
     //   title: "New book (Wooden)",
@@ -36,10 +38,17 @@ function App() {
     //   date: new Date(2021, 3, 10),
     // },
   ];
+
+
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+   } ;
+
   return (
     //to excess the array of objects 
     <div>
-     <NewExpense/>
+     <NewExpense onAddExpense= {addExpenseHandler}/>
     <Expenses items={expenses}/>
      
     </div>

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
+// import props from 'prop-types';
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   //below 3 lines are the states updates indivdually
     const [enteredTitle, setEnteredTitle] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
@@ -64,7 +65,8 @@ const ExpenseForm = () => {
       // built in date constructor
       //entereddate will parse the date and convert it into the date object
     };
-    console.log(expenseData);
+    
+    props.onSaveExpenseData(expenseData);
     setEnteredTitle('');
     setEnteredAmount('');
     setEnteredDate('');
