@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 
-function ExpenseItem(props){
+const ExpenseItem =(props) =>{
 
     //function clickHandler is used for the click on button from user
     
