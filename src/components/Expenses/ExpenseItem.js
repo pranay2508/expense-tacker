@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
+import React from 'react';
 import Card from '../UI/Card';
 import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
@@ -8,7 +9,7 @@ const ExpenseItem =(props) =>{
     //function clickHandler is used for the click on button from user
     
     
-   const [title,setTitle]= useState(props.title);
+//    const [title,setTitle]= useState(props.title);
    // useState(props.title); => this props.title value is coming form the props if we dont use props we have to us the value which has to be change 
      //usestate must be directly called inside such component function 
     // the can not be called outside the function or inside a nested function 
@@ -16,10 +17,10 @@ const ExpenseItem =(props) =>{
    
     
     
-    const clickHandler = () => {
-       setTitle('Updated');
-        console.log(title);
-    }
+    // const clickHandler = () => {
+    //    setTitle('Updated');
+    //     console.log(title);
+    // }
 // the code looks like in html is basically speciall JSX code which is de eloper by react team
     //its still the js code 
     // const expenseDate= new Date(2023 , 5 , 13);
@@ -41,11 +42,11 @@ const ExpenseItem =(props) =>{
         
         <ExpenseDate  date ={props.date}/>
          <div className='expense-item__description'>
-            <h2> {title}</h2>
+            <h2> {props.title}</h2>
             <div className='expense-item__price'>${props.amount}</div>
          </div>
         
-        <button onClick={clickHandler}>Change title</button>
+        {/* <button onClick={clickHandler}>Change title</button> */}
         </Card>
    
     );
