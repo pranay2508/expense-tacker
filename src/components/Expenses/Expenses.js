@@ -12,24 +12,7 @@ const Expenses = (props) => {
   const filterChangeHandler = selectedYear =>{
     setFilteredYear(selectedYear);
   };
-  // const Expenses =(props) =>{
-  //   const [filteredYear , setFilteredYear] = useState('2020');
-  //   const filterChangeHandler = selectedYear =>{
-  //     setFilteredYear(selectedYear);
-
-  // };
-
-  // function Expenses(props){
-
-  //   const filterChangeHandler = selectedYear => {
-  //     const [ filteredYear , setFilteredYear ] = useState('2020');
-
-  //     const filterChangeHandler = selectedYear => {
-
-  //       setFilteredYear(selectedYear);
-  //     };
-
-  //   }
+  
   return (
     <div>
       <Card className="expenses">
