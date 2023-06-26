@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 // import React from 'react';
-import NewExpense from './components/NewExpense/NewExpense';
+import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
 const DUMMY_EXPENSES = [
@@ -12,11 +12,7 @@ const DUMMY_EXPENSES = [
     amount: 94.12,
     date: new Date(2020, 7, 14),
   },
-  { id: "e2", 
-  title: "New TV", 
-  amount: 799.49, 
-  date: new Date(2021, 2, 12) 
-},
+  { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
 
   {
     id: "e3",
@@ -31,7 +27,6 @@ const DUMMY_EXPENSES = [
     date: new Date(2021, 5, 12),
   },
 
- 
   // {
   //   id: "e5",
   //   title: "New book (Wooden)",
@@ -40,20 +35,16 @@ const DUMMY_EXPENSES = [
   // },
 ];
 
-
-// line 46 se samjhna h 
+// line 46 se samjhna h
 
 const App = () => {
- 
-  const [expenses , setExpenses] = useState(DUMMY_EXPENSES);
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-  const addExpenseHandler = expense =>{
-    setExpenses(prevExpenses =>{
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
-
-
-};
+  };
 
   // const addExpenseHandler = expense => {
   //   console.log('In App.js');
@@ -61,18 +52,14 @@ const App = () => {
   //  } ;
 
   return (
-    //to excess the array of objects 
+    //to excess the array of objects
     <div>
-     <NewExpense onAddExpense= {addExpenseHandler}/>
-    <Expenses items={expenses}/>
-     
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;
-
-
-
 
 //
