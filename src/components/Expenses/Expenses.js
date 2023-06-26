@@ -20,6 +20,19 @@ const Expenses = (props) => {
 
   });
 
+  let expenseContent = <p> No expesnes found.</p>;
+
+  if (filteredExpenses.length >0){
+
+   expenseContent= filteredExpenses.map((expense)=>(
+    <ExpenseItem  
+          key = {expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date ={expense.date}
+          />
+  ))}
+
   return (
     <div>
       <Card className="expenses">
@@ -28,14 +41,22 @@ const Expenses = (props) => {
         onChangeFilter ={filterChangeHandler}
           
         />
-        {filteredExpenses.map((expense)=>(
-          <ExpenseItem  
+        {expenseContent}
+
+
+        {/* Javascript && operator make the first condition checked and return the second condition also if the first one is true 
+        {filteredExpenses.length === 0 && <p>No Expenses found for this year.</p>}
+        {filteredExpenses.length === 0 &&  filteredExpenses.map((expense)=>(
+         ( <ExpenseItem  
           key = {expense.id}
           title={expense.title}
           amount={expense.amount}
           date ={expense.date}
-          />
-        ))}
+          />)
+        ))} */}
+
+
+        
         {/* <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
