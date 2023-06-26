@@ -60,8 +60,8 @@ const ExpenseForm = (props) => {
 
     const expenseData ={
       title : enteredTitle ,
-      amount:enteredAmount,
-      date: new Date(enteredDate)
+      amount: +enteredAmount,
+      date: new Date(enteredDate),
       // built in date constructor
       //entereddate will parse the date and convert it into the date object
     };
